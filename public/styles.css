@@ -1,0 +1,747 @@
+/* html {
+    background-image: url("/honey2.jpg");
+} */
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Rubik:300i,400,400i|Short+Stack&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+main {
+    height: 100vh;
+    background: url("/bg6.jpg") no-repeat;
+    background-size: cover;
+}
+
+button,
+input,
+textarea {
+    font-family: "Rubik", sans-serif;
+    border-radius: 15px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+.welcomecontainer {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+#welcome {
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    background-color: white;
+    width: 780px;
+    height: 100vh;
+}
+
+.form {
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    background-color: white;
+    padding: 20px;
+}
+
+.form>* {
+    margin: 5px;
+    border-radius: 15px;
+    height: 30px;
+}
+
+.error {
+    font-style: italic;
+    margin: 10px;
+    height: 15px;
+}
+
+button {
+    margin: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #fdc88a;
+    box-shadow: 2px 2px grey;
+    border: none;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #FFEBAC;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    background-color: #f2dcae;
+}
+
+button:focus {
+    outline: none;
+}
+
+.nav {
+    background-color: #f4ac5a;
+    height: 80px;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    box-shadow: -1px -8px 20px black;
+}
+
+.nav img {
+    width: 55px;
+    height: 48.5px;
+    object-fit: cover;
+}
+
+.nav a:hover {
+    transform: scale(1.1);
+    /* background-color: #f2dcae; */
+}
+
+.nav .text {
+    display: none;
+}
+
+.nav .hex {
+    position: relative;
+    overflow: hidden;
+    width: 55px;
+    height: 48.5px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    margin: 5px auto;
+}
+
+/* Left shape */
+.nav .hex:before {
+    content: "";
+    position: absolute;
+    top: -0.1px;
+    left: -0.1px;
+    width: 0;
+    height: 1px;
+    border-right: 13.75px solid transparent;
+    border-bottom: 24.25px solid #f4ac5a;
+    border-top: 24.25px solid #f4ac5a;
+    z-index: 3;
+}
+
+/* Right shape */
+.nav .hex:after {
+    content: "";
+    position: absolute;
+    top: -0.1px;
+    right: -0.1px;
+    width: 0;
+    height: 1px;
+    border-left: 13.75px solid transparent;
+    border-bottom: 24.25px solid #f4ac5a;
+    border-top: 24.25px solid #f4ac5a;
+}
+
+.blank {
+    width: 55vw;
+}
+
+.profilepic {
+    width: 340px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.uploader {
+    position: fixed;
+    padding: 20px;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 35px;
+    height: 100px;
+    width: 400px;
+    border: 3px solid black;
+    background-color: white;
+    display: grid;
+    animation: MoveUpDown 0.15s linear;
+    transition-timing-function: ease-in-out;
+    z-index: 500;
+}
+
+@keyframes MoveUpDown {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: 45%;
+    }
+}
+
+.uploader div {
+    display: grid;
+    grid-auto-flow: column;
+    justify-self: center;
+    align-self: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.uploader button {
+    /* border-radius: 0; */
+}
+
+.uploader input {
+    border-radius: 0;
+    margin-left: 15px;
+}
+
+.uploader p {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 10px;
+}
+
+.uploader p:hover {
+    cursor: pointer;
+}
+
+.edit {
+    display: grid;
+}
+
+.bioedit {
+    display: grid;
+    justify-items: center;
+}
+
+.bioedit h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.bioedit p {
+    color: #474541;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+.ifbio {
+    min-height: 44px;
+}
+
+.ifedit {
+    display: grid;
+}
+
+.edit {
+    min-height: 36px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.me .pic {
+    align-self: center;
+    justify-self: center;
+}
+
+.me .profilepic {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -600%);
+    -ms-transform: translate(-125%, -350%);
+    text-align: center;
+}
+
+.me .pic:hover .profilepic {
+    opacity: 0.8;
+}
+
+.pic:hover .middle {
+    opacity: 1;
+}
+
+.me .text {
+    font-size: 16px;
+    /* padding: 16px 32px; */
+}
+
+.other .text {
+    display: none;
+}
+
+.people {
+    display: flex;
+    align-items: center;
+}
+
+.people>* {
+    margin: 5px;
+}
+
+.people img {
+    width: 100px;
+    height: 88px;
+    object-fit: cover;
+}
+
+.me .hex, .other .hex {
+    position: relative;
+    overflow: hidden;
+    width: 340px;
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+/* Left shape */
+.me .hex:before, .other .hex:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 0;
+    height: 3px;
+    border-right: 85px solid transparent;
+    border-bottom: 150px solid white;
+    border-top: 150px solid white;
+    z-index: 3;
+}
+
+/* Right shape */
+.me .hex:after, .other .hex:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 3px;
+    border-left: 85px solid transparent;
+    border-bottom: 150px solid white;
+    border-top: 150px solid white;
+}
+
+.pipcontainer .hex, .wanna .hex {
+    overflow: hidden;
+    width: 100px;
+    height: 88px;
+    position: relative;
+    margin: 5px;
+}
+
+/* Left shape */
+.pipcontainer .hex:before, .wanna .hex:before {
+    content: "";
+    position: absolute;
+    top: -0.2px;
+    left: -0.2px;
+    width: 0;
+    height: 1.5px;
+    border-right: 20px solid transparent;
+    border-bottom: 44px solid white;
+    border-top: 44px solid white;
+}
+
+/* Right shape */
+.pipcontainer .hex:after, .wanna .hex:after {
+    content: "";
+    position: absolute;
+    top: -0.2px;
+    right: -0.2px;
+    width: 0;
+    height: 1px;
+    border-left: 20px solid transparent;
+    border-bottom: 44px solid white;
+    border-top: 44px solid white;
+}
+
+.nofriendsmsg {
+    visibility: hidden;
+}
+
+.wannafriends>*, .peoplecontainer>* {
+    display: grid;
+    justify-self: center;
+    width: 750px;
+}
+
+.wannafriends img {
+    width: 100px;
+    height: 88px;
+    object-fit: cover;
+}
+
+.friends h2 {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fdc88a;
+}
+
+.peoplecontainer h3, .wannafriends h3 {
+    justify-self: start;
+    padding-left: 15px;
+}
+
+.peoplecontainer input {
+    justify-self: start;
+    width: 150px;
+    height: 25px;
+}
+
+.nofriendsmssg p {
+    color: red;
+}
+
+.friends {
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: column;
+    align-self: center;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 100px;
+    /* border: 2px solid blue; */
+}
+
+.peoplecontainer, .wannafriends, .chat {
+    display: grid;
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-items: center;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #f4ac5a;
+}
+
+.chat {
+    overflow-y: hidden;
+    width: 500px;
+    height: 450px;
+}
+
+.profile {
+    display: grid;
+    width: 400px;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px #f4ac5a;
+}
+
+.friendbuttoncontainer {
+    height: 100px;
+    display: grid;
+    /* padding: 0;
+    margin: 0; */
+}
+
+.friendbuttoncontainer button {
+    height: 50px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.friendbuttoncontainer p {
+    margin: 0;
+    padding: 0;
+}
+
+.bio {
+    width: 300px;
+    display: grid;
+    justify-items: center;
+}
+
+.bio p {
+    color: #474541;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+.bio h1 {
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.user, .people {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 120px 1fr 250px;
+    justify-items: center;
+    padding: 5px;
+    height: 120px;
+    border-bottom: 1px solid #fdc88a;
+}
+
+.user a {
+    justify-self: start;
+}
+
+.buttons {
+    display: grid;
+    justify-items: center;
+}
+
+.flier>* {
+    /* Adjust animation duration to change the element’s speed */
+    animation: fly 50s linear infinite;
+    pointer-events: none !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    animation-delay: 1s;
+    z-index: 999999;
+}
+
+/* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+@keyframes fly {
+    98.001%, 0% {
+        display: block;
+        transform: translateX(-200%) translateY(100vh)
+    }
+
+    15% {
+        transform: translateX(100vw) translateY(-100%)
+    }
+
+    15.001%, 18% {
+        transform: translateX(100vw) translateY(-30%)
+    }
+
+    40% {
+        transform: translateX(-200%) translateY(3vh)
+    }
+
+    40.001%, 43% {
+        transform: translateX(-200%) translateY(-100%)
+    }
+
+    65% {
+        transform: translateX(100vw) translateY(50vh)
+    }
+
+    65.001%, 68% {
+        transform: translateX(20vw) translateY(-200%)
+    }
+
+    95% {
+        transform: translateX(10vw) translateY(100vh)
+    }
+}
+
+.find {
+    height: 150px;
+}
+
+@keyframes shake {
+
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+.peoplecontainer:hover {
+    animation-name: shake;
+}
+
+.chat-container {
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    background-color: white;
+}
+
+/* .chat {
+    background-color: #fdc88a;
+} */
+.chatin {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.chatin {
+    padding: 0;
+    margin: 0;
+}
+
+.chatin textarea {
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    border-radius: 0;
+    height: 30px;
+    padding-top: 5px;
+}
+
+.chatin span {
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+.msg {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.pmsg {
+    padding: 2px;
+    margin: 0;
+    background-color: #FFECAA;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.pmsg p {
+    padding: 0;
+    margin: 0;
+}
+
+.msg img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.date {
+    font-size: 8px;
+    font-style: italic;
+    color: grey;
+}
+
+#user a {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.on {
+    color: green;
+}
+
+.chat {
+    position: relative;
+}
+
+.online {
+    justify-self: start;
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 4px;
+    box-shadow: 1px 1px 20px black;
+    display: grid;
+    position: absolute;
+    border: 1px solid black;
+    right: 400px;
+    margin-right: 13px;
+}
+
+.online h3 {
+    justify-self: center;
+}
+
+.useronline a {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.useronline a img {
+    width: 25px;
+    height: 25px;
+    border-radius: 13px;
+    object-fit: cover;
+}
+
+.online2 {
+    height: 100px;
+    overflow-y: scroll;
+    /* border-bottom: 1px solid black; */
+}
+
+.prichat {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    justify-self: start;
+}
